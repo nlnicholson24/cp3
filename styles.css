@@ -1,0 +1,29 @@
+body {
+    font-size: 16px;
+    padding: 20px 100px 0px 100px;
+    min-height: 400px;
+   margin-bottom: 100px;
+   clear: both;
+   background: #CA6D48;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+}
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+    height: 100px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+}

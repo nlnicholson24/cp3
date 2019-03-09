@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="styles.css" />
+  <title>Iron Throne Contenders</title>
+</head>
+
+<body>
+  <center>
+  <h1>Game of Thrones: Contenders for the Iron Thrones</h1>
+</center>
+
+  <div id="app">
+  <center>
+      <p>
+        <button v-on:click="previousContender">Previous</button>
+        <button v-on:click="nextContender">Next</button>
+        <button v-on:click="randomContender">Random</button>
+      </p>
+      <h2>"{{quote}}"</h2>
+
+      <img v-bind:src="current.img">
+
+          <h2>Could {{name}} could win the Iron Throne?</h2>
+
+          <h3>Official Poll</h3>
+          <p>
+            <button v-on:click="voteYes">Yes</button>
+            <button v-on:click="voteNo">No</button>
+            <button v-on:click="voteMaybe">Maybe</button>
+          </p>
+          <p>Yes: {{yesPercent}}% No: {{noPercent}}% Maybe: {{maybePercent}}%</p>
+
+          <h3>What do you think?</h3>
+          <form v-on:submit.prevent="addComment">
+            <textarea v-model="addedComment" placeholder="Why or why not?"></textarea>
+          </br>
+            <input v-model="addedName" placeholder="Name"></p>
+            <br />
+            <button type="submit">Submit</button>
+          </form>
+
+      <h3>Here's what the fans are saying about {{name}}:</h3>
+    </center>
+      <div v-for="comment in comments[number]">
+        <hr>
+        <p><b>{{comment.author}} says:</b></p>
+        <p><i>"{{comment.text}}"</i></p>
+      </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
+  <script src="https://unpkg.com/moment"></script>
+  <script src="/script.js"></script>
+</body>
+
+<footer>
+  <a class="flink" href="https://github.com/nlnicholson24/cp3">Link to Github Repository</a>
+</footer>
+
+</html>
